@@ -14,14 +14,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _State extends State<MyApp> {
-
   String _text = "hey nice!";
   String _textChanger = "Initial Text";
 
-  void changeTextMyBro()  {
+  void changeTextMyBro() {
     setState(() {
-          _textChanger = _text;
-        });
+      _textChanger = _text;
+    });
   }
 
   @override
@@ -31,14 +30,17 @@ class _State extends State<MyApp> {
         title: new Text("Trial Application"),
       ),
       body: new Container(
-        child: new Column(
-          children: <Widget>[
-            new Text("Hello Everybody"),
-            new RaisedButton(
-              child: new Text(_textChanger),
-              onPressed: changeTextMyBro,
-            )
-          ],
+        padding: new EdgeInsets.all(32.0),
+        child: new Center(
+          child: new Column(
+            children: <Widget>[
+              new Text("Hello Everybody"),
+              new RaisedButton(
+                child: new Text(_textChanger),
+                onPressed: changeTextMyBro,
+              )
+            ],
+          ),
         ),
       ),
     );
