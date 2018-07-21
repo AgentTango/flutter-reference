@@ -43,6 +43,16 @@ class HomePageState extends State<HomePage> {
     });
   }
 
+  void clearData() {
+    setState(() {
+      num1 = 0;
+      num2 = 0;
+      output = 0;
+      t1.text = "0";
+      t2.text = "0";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -130,6 +140,18 @@ class HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
+              new Padding(
+                padding: EdgeInsets.all(8.0),
+              ),
+              new RaisedButton(
+                child: new Text(
+                  "Clear"
+                ),
+                color: Colors.indigo,
+                onPressed: () {
+                  clearData();
+                },
+              )
             ],
           ),
         ),
