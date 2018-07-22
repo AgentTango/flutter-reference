@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Rishi Banerjee",
+        "age": 19,
+        "height": 188,
+        "gender": "male",
+        "hair_color": "black"
+    },
+    {
+        "name": "Clark Kent",
+        "age": 25,
+        "height": 186,
+        "gender": "male",
+        "hair_color": "black"
+    },
+    {
+        "name": "Bruce Wayne",
+        "age": 56,
+        "height": 160,
+        "gender": "male",
+        "hair_color": "brown"
+    },
+    {
+        "name": "Hal Jordan",
+        "age": 29,
+        "height": 188,
+        "gender": "male",
+        "hair_color": "blue"
+    }
+]

@@ -21,8 +21,8 @@ class ChatScreenState extends State<ChatScreen> {
     );
 
     setState(() {
-          _messages.insert(0, message);
-        });
+      _messages.insert(0, message);
+    });
   }
 
   Widget _textComposerWidget() {
@@ -58,25 +58,25 @@ class ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return new Column(
-        children: <Widget>[
-          new Flexible(
-            child: new ListView.builder(
-              padding: new EdgeInsets.all(8.0),
-              reverse: true,
-              itemBuilder: (_, int index) => _messages[index],
-              itemCount: _messages.length,
-            ),
+      children: <Widget>[
+        new Flexible(
+          child: new ListView.builder(
+            padding: new EdgeInsets.all(8.0),
+            reverse: true,
+            itemBuilder: (_, int index) => _messages[index],
+            itemCount: _messages.length,
           ),
-          new Divider(
-            height: 1.0,
+        ),
+        new Divider(
+          height: 1.0,
+        ),
+        new Container(
+          decoration: new BoxDecoration(
+            color: Theme.of(context).cardColor,
           ),
-          new Container(
-            decoration: new BoxDecoration(
-              color: Theme.of(context).cardColor,
-            ),
-            child: _textComposerWidget(),
-          )
-        ],
-      );
+          child: _textComposerWidget(),
+        )
+      ],
+    );
   }
 }
