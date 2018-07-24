@@ -29,7 +29,7 @@ class HomePageState extends State<HomePage> {
                 .loadString('load_json/person.json'),
             builder: (context, snapshot) {
               // Decode Json
-              var mydata = JSON.decode(
+              var mydata = json.decode(
                 snapshot.data.toString(),
               );
               return new ListView.builder(
