@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
               itemBuilder: (context, int index) {
                 return new ListTile(
                   leading: new CircleAvatar(
-                    child: new Text(_songs[index].title),
+                    child: new Text(_songs[index].title[0]),
                   ),
                   title: new Text("Data"),
                 );
