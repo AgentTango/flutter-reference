@@ -18,25 +18,21 @@ class _MyAppState extends State<MyApp> {
         body: new ListView.builder(
           itemCount: 1,
           itemBuilder: (context, int index) {
-            return new ListTile(
-              leading: new CircleAvatar(
-                child: new Text("R"),
-              ),
-              title: new Column(
+            return new Card(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  new Text(
-                    "Rishi Banerjee",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                  const ListTile(
+                    leading: CircleAvatar(
+                      child: Text("R"),
                     ),
-                    textAlign: TextAlign.left,
-                  ),
-                  new Text(
-                    "I really liked this app. Made me earn money so quick, being a college student it really helped a lot",
+                    title: Text('Rishi Banerjee'),
+                    subtitle: Text(
+                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'),
+                    trailing: Icon(Icons.thumb_up),
                   ),
                 ],
               ),
-              trailing: new Icon(Icons.thumb_up),
             );
           },
         ),
