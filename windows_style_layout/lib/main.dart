@@ -20,13 +20,13 @@ class _MyAppState extends State<MyApp> {
             crossAxisCount: 4,
             itemCount: 20,
             itemBuilder: (BuildContext context, int index) => new Container(
-                color: Colors.blue,
-                child: new Center(
-                  child: new CircleAvatar(
-                    backgroundColor: Colors.white,
-                    child: new Icon(Icons.category),
+                  color: Colors.blue,
+                  child: new Image.asset(
+                    'images/business.jpg',
+                    fit: BoxFit.fill,
+                    colorBlendMode: BlendMode.colorDodge,
                   ),
-                )),
+                ),
             staggeredTileBuilder: (int index) =>
                 new StaggeredTile.count(2, index.isEven ? 2 : 1),
             mainAxisSpacing: 4.0,
