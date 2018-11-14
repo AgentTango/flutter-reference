@@ -18,13 +18,13 @@ class _MyAppState extends State<MyApp> {
           ),
           body: new StaggeredGridView.countBuilder(
             crossAxisCount: 4,
-            itemCount: 8,
+            itemCount: 20,
             itemBuilder: (BuildContext context, int index) => new Container(
-                color: Colors.green,
+                color: Colors.blue,
                 child: new Center(
                   child: new CircleAvatar(
                     backgroundColor: Colors.white,
-                    child: new Text('$index'),
+                    child: new Icon(Icons.category),
                   ),
                 )),
             staggeredTileBuilder: (int index) =>
