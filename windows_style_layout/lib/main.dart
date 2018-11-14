@@ -21,10 +21,18 @@ class _MyAppState extends State<MyApp> {
             itemCount: 20,
             itemBuilder: (BuildContext context, int index) => new Container(
                   color: Colors.blue,
-                  child: new Image.asset(
-                    'images/business.jpg',
-                    fit: BoxFit.fill,
-                    colorBlendMode: BlendMode.colorDodge,
+                  child: new Container(
+                    decoration: new BoxDecoration(
+                      image: new DecorationImage(
+                        image: new AssetImage('images/health.jpg'),
+                        fit: BoxFit.cover,
+                        alignment: Alignment.center,
+                      ),
+                      color: Colors.white.withOpacity(0.0),
+                    ),
+                    child: new Text(
+                      'Business',
+                    ),
                   ),
                 ),
             staggeredTileBuilder: (int index) =>
