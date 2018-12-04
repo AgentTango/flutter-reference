@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:ui' show lerpDouble;
 
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
@@ -23,9 +22,7 @@ class ChartPageState extends State<ChartPage> with TickerProviderStateMixin {
   int dataSet = 50;
 
   AnimationController animation;
-  double startHeight;
-  double currentHeight;
-  double endHeight;
+  Tween<double> tween;
 
   @override
   void initState() {
@@ -33,18 +30,8 @@ class ChartPageState extends State<ChartPage> with TickerProviderStateMixin {
     animation = AnimationController(
       duration: const Duration(milliseconds: 300),
       vsync: this,
-    )..addListener(() {
-        setState(() {
-          currentHeight = lerpDouble(
-            startHeight,
-            endHeight,
-            animation.value,
-          );
-        });
-      });
-    startHeight = 0.0;
-    currentHeight = 0.0;
-    endHeight = dataSet.toDouble();
+    );
+    tween = Tween<double>(begin: 0.0, end: dataSet.toDouble());
     animation.forward();
   }
 
@@ -56,9 +43,11 @@ class ChartPageState extends State<ChartPage> with TickerProviderStateMixin {
 
   void changeData() {
     setState(() {
-      startHeight = currentHeight;
       dataSet = random.nextInt(100);
-      endHeight = dataSet.toDouble();
+      tween = Tween<double>(
+        begin: tween.evaluate(animation),
+        end: dataSet.toDouble(),
+      );
       animation.forward(from: 0.0);
     });
   }
@@ -80,3 +69,4 @@ class ChartPageState extends State<ChartPage> with TickerProviderStateMixin {
     );
   }
 }
+
